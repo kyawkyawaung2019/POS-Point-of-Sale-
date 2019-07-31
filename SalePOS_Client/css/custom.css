@@ -1,0 +1,100 @@
+.pagetitle{
+	  height: 120px;
+	  width:100%;
+	  background-color:#ECEFF1;
+
+}
+.pagetitle h1{
+	 font-size: 55px;
+	 padding-left: 50px;
+	 font-weight: bold;
+
+}
+.addpanel{
+
+	height: 120px;
+	background-color:#B0BEC5; 
+}
+.addpanel button, .addbutton{
+	
+	margin-right: 50px;
+	margin-top: 40px;
+	height:40px;
+	float:right;
+}
+
+
+#content{background-color:#ECEFF1;}
+
+.item-table{
+	width:100%;
+
+	 }
+.item-table{
+	margin-top:50px;
+
+}
+.item-table th{
+	 height: 25px;
+	 font-weight: bold;
+
+
+	 }
+.upload-form{
+	margin-top:50px;
+    width:80%;
+}
+
+.upload-form .form-group label, legend{
+	font-family: Time News Roman;
+	font-weight: bold;
+}
+
+    /*sub-menu*/
+
+
+    .sub-index{
+    	width:100%;
+    }
+    
+.sub-index a{
+	display: block;
+	width:200px;
+	height:100px;
+	text-align: center;
+	font-size:20px;
+	padding-top: 40px;
+	background-color:#f5f5ef;
+	text-decoration: none;
+	color:black;
+	font-family: Time News Roman;
+	font-weight: bold;
+
+}
+
+.sub-index a:hover{
+	background-color:white;
+	box-shadow: 5px 2px 0px 2px ;
+	color:#4A148C;
+
+	
+}
+
+/*side navigation*/
+.side_navigation button
+{
+	width:100%;
+}
+
+/*retail dashboard*/
+
+/*.retail_dashboard{ width:500px; height:500px;}*/
+/*
+note for pages*/
+.note{
+	margin-left: 20px;
+	margin-top: 40px;
+	float:left;
+	font-size: 18px;
+	font-weight: bold;
+}
