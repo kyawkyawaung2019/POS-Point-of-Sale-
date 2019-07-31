@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sale POS</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Javascript Library-->
+	<script type="text/javascript"  src="js/jquery-3.2.0.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+	<!-- Theme style -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+	<!-- Custom javascript and css -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<!-- Main Header -->
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="#" class="logo">
+				<span class="pull-left">
+					<img src="images/SalePOS.png" height="30px" style=" height:30px;">
+				</span>
+				<span>
+					<b>Sale</b>(POS)
+				</span>
+			</a>
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr">&#x21CB;</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/admin.png" class="user-image" alt="User Image">
+								<span class="hidden-xs" id="username">Admin</span>
+							</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header">
+									<img src="images/admin.png" class="img-circle" alt="User Image">
+									<p>
+										<label id="dUsername">Admin</label> - <label id="rank">Web Developer</label>
+										<small id="createdDate">Member since Nov. 2015</small>
+									</p>
+								</li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-right">
+										<a href="index.html" class="btn btn-primary btn-flat">Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<!-- Sidebar Menu -->
+				<ul class="sidebar-menu" data-widget="tree">
+					<!-- Home -->
+					<li>
+						<a href="home.html">
+							<img src="images/sell/home.png" style=" height:25px;">
+							<span>Home</span>
+						</a>
+					</li>
+					<!-- Sell -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/sale.jpg" style=" height:25px;">
+							<span>Sale</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="sell.html">Sell</a></li>
+							<li><a href="open.close.html">Open / Close</a></li>
+							<li><a href="sale.history.html">Sale History</a></li>
+						</ul>
+					</li>
+					<!-- Reporting -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/reporting.jfif" style=" height:25px;">
+							<span>Reporting</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="retail_chart_report.html">Retail Dashboard</a></li>
+							<li><a href="register.closure.html">Register Closure</a></li>
+							<li><a href="sale.report.html">Sale Report</a></li>
+							<li><a href="inventory_report.html">Inventory Report</a></li>
+						</ul>
+					</li>
+					<!-- Product -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/product.png" style=" height:25px;">
+							<span>Product</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="product.html">Product</a></li>
+							<li><a href="type.html">Type</a></li>
+							<li><a href="brand.html">Brand</a></li>
+							<li><a href="tags.html">Tags</a></li>
+							<li><a href="supplier.html">Supplier</a></li>
+						</ul>
+					</li>
+					<!-- Customer -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/customer.jfif" style=" height:25px;">
+							<span>Customer</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="customer.html">Customer</a></li>
+							<li><a href="group.html">Groups</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+            <div class="breadcome-area">
+                <!-- <div class="container-fluid"> -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcome-list" style="background-color:#f0ffff;">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="breadcomb-wp">
+                                            <div class="breadcomb-ctn">
+                                                <h2 style="color: black;"> Start your retail success with Vend.</h2>
+                                                <p style="color: black;">Get to know the basics <span class="bread-ntd">in three easy ways.</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- MAKE A SALE PROMO -->
+                                <div class="section-admin container-fluid res-mg-t-15">
+                                    <div class="row admin text-center">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div style="width:80%; height:200%;">
+                                                        <div class="sales">
+                                                            <div class="sale">
+                                                                <img class="vd-promo-image " src="images/sale.svg" alt="sale">
+                                                            </div>
+                                                            <div class="vd-promo-content">
+                                                                <h2 class="vd-promo-headline">Make a Sale</h2>
+                                                                <div class="vd-promo-intro">
+                                                                    <span>
+																		Explore the Sell screen, and learn how to make your first sale in seconds.
+																	</span>
+                                                                    <div class="vd-ptl">
+                                                                        <span>
+																			You've made a sale!
+																		</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div style="width:100%; height: 200%;">
+                                                        <div class="products">
+                                                            <div class="sale">
+                                                                <img class="vd-promo-image " src="images/product.svg" alt="sale">
+                                                            </div>
+                                                            <div class="vd-promo-content">
+                                                                <h2 class="vd-promo-headline">Add a Product</h2>
+                                                                <div class="vd-promo-intro">
+                                                                    <span>
+																		Manage your products easily, whether you want to add one  or import one thousand.
+																	</span>
+                                                                    <div class="vd-ptl">
+                                                                        <a class="btn btn-success" href="post_product.html" data-event-name="Add Product">Add a Product</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div style="width:80%; height: 200%;">
+                                                        <div class="customers">
+                                                            <div class="sale">
+                                                                <img class="vd-promo-image " src="images/customer.svg" alt="sale">
+                                                            </div>
+                                                            <div class="vd-promo-content">
+                                                                <h2 class="vd-promo-headline">Add a Customer</h2>
+                                                                <div class="vd-promo-intro">
+                                                                    <span>
+																		 Start a customer base to grow repeat business or simply upload existing customers.
+																	</span>
+                                                                    <div class="vd-ptl">
+                                                                        <span>
+																			You've added a customer!
+																		</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="vd-hero-footer-link">
+                                    For help with setting up Vend, check out the
+                                    <a class="vd-link" href="" target="_blank" data-event-name="View Getting Started Guide">
+                                        <span style="color: red">Getting Started Guide</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+            <div class="product-sales-area mg-tb-30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <section class="vd-section align-center">
+                                <div class="vd-section-wrap">
+                                    <div class="vd-hero vd-hero--transparent vd-pan">
+                                        <h1 class="vd-hero-headline">
+										Every part of your business, in&nbsp;sync.        </h1>
+										<div class="vd-hero-content">
+											<p class="vd-hero-intro">
+											Here are some of the ways to automate the heavy lifting of running your business so you can focus on&nbsp;success. </p>
+										</div>
+									</div>
+                                </div>
+                            </section>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <section class="vd-section vd-mbl">
+                                        <div class="vd-section-wrap">
+                                            <div class="vd-g-row vd-flex--justify-center">
+												<div class="row">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+														<div class="vd-promo vd-promo--full  ">
+															<div class="vd-promo-image-container">
+																<div class="imgg">
+																	<img class="vd-promo-image vd-promo-image--restrained" src="images/ecommerce-v1.svg">
+																</div>
+															</div>
+															<div class="content">
+																<h2 class="vd-promo-headline">Sell in-store and online.</h2>
+																<div class="vd-promo-intro">
+																	<span>
+																		Add a new product to your catalogue and sell it anywhere instantly.
+																		Manage your in-store and online inventory, customers and sales
+																		all in one place.
+																	</span>
+																	<p class="vd-mtm">
+																		<a href="#" class="vd-link" data-event-name="Clicked: Explore Vend Ecommerce">
+																			<span style="color: red">Explore Vend Ecommerce</span>
+																		</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="vd-promo vd-promo--full  ">
+                                                        <div class="vd-promo-image-container">
+                                                            <div class="imgg">
+                                                                <img class="vd-promo-image vd-promo-image--restrained" src="images/explore-xero-v3.svg">
+                                                            </div>
+                                                        </div>
+                                                        <div class="vd-promo">
+                                                            <h2 class="vd-promo-headline">See your performance in real-time.</h2>
+                                                            <div class="vd-promo-intro">
+                                                                <span>
+																	 See your cashflow in real-time with Xero, the most popular integrated online accounting software.
+																	Post daily sales reports, generate invoices and sync customers.
+																</span>
+                                                                <p class="vd-mtm">
+                                                                    <a href="/setup/add-ons" class="vd-link" data-event-name="Clicked: Learn more about Xero">
+                                                                        <span style="color: red">Learn more about Xero</span>
+                                                                    </a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+												</div>
+												<div class="row">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+														<div class="vd-promo vd-promo--full  ">
+															<div class="vd-promo-image-container">
+																<div class="imgg">
+																	<img class="vd-promo-image vd-promo-image--restrained" src="images/stock-v1.svg">
+																</div>
+															</div>
+															<div class="vd">
+																<h2 class="vd-promo-headline">Always have stock on hand.</h2>
+																<div class="vd-promo-intro">
+																	<span>
+																		Don’t waste time figuring how much of what to order.
+																		Instantly add products that are running low to your stock orders,
+																		so you always have what your customers want.
+																	</span>
+																	<p class="vd-mtm">
+																		<a href="/consignment" class="vd-link" data-event-name="Clicked: Make a stock order">
+																			<span style="color: red">Make a stock order</span>
+																		</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+														<div class="vd-promo vd-promo--full  ">
+															<div class="vd-promo-image-container">
+																<div class="imgg">
+																	<img class="vd-promo-image vd-promo-image--restrained" src="images/user-permissions-v1.svg">
+																</div>
+															</div>
+															<div class="vd">
+																<h2 class="vd-promo-headline">Know what your staff are up to.</h2>
+																<div class="vd-promo-intro">
+																	<span>
+																		Whether it’s tracking sales performance,
+																		or making sure they can do only what they need to conduct their role,
+																		gain full control over your staff.
+																	</span>
+																	<p class="vd-mtm">
+																		<a href="#" class="vd-link" data-event-name="Clicked: Check out user permissions">
+																			<span style="color: red">Check out user permissions</span>
+																		</a>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+                                        </div>
+                                    </section>
+                                </div>
+                            <div>
+                                <nv-account-banner class="vd-hide-print"></nv-account-banner>
+                            </div>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			var userId = sessionStorage.getItem("userId");
+			<!-- var userId = localStorage.getItem("userId"); -->
+			$.ajax({
+				url: "http://localhost:8000/Staff/"+userId+"/",
+			}).then(function(data){
+				console.log(data);
+				// Check browser support
+				if (typeof(Storage) !== "undefined") {
+					$('#username').text(data.username);
+					$('#dUsername').text(data.username);
+					$('#rank').text(data.rank);
+					$('#createdDate').text("Member since " + data.created_date);
+				}
+				else
+				{
+					$('#username').text("Admin");
+					$('#dUsername').text("Admin");
+					$('#rank').text("Web Developer");
+					$('#createdDate').text("Member since -");
+				}
+			});
+		});
+	</script>
+</body>
+</html>

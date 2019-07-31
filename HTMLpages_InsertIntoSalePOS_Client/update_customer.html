@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sale POS</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Javascript Library-->
+	<script type="text/javascript"  src="js/jquery-3.2.0.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+	<!-- Theme style -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+
+	<!-- Custom javascript and css -->
+	<script type="text/javascript" src="js/update/update_customer.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<!-- Main Header -->
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="" class="logo">
+				<span class="pull-left">
+					<img src="images/SalePOS.png" height="30px" style=" height:30px;">
+				</span>
+				<span>
+					<b>Sale</b>(POS)
+				</span>
+			</a>
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr">&#x21CB;</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/admin.png" class="user-image" alt="User Image">
+								<span class="hidden-xs" id="username">Admin</span>
+							</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header">
+									<img src="images/admin.png" class="img-circle" alt="User Image">
+									<p>
+										<label id="dUsername">Admin</label> - <label id="rank">Web Developer</label>
+										<small id="createdDate">Member since Nov. 2015</small>
+									</p>
+								</li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-right">
+										<a href="index.html" class="btn btn-primary btn-flat">Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<!-- Sidebar Menu -->
+				<ul class="sidebar-menu" data-widget="tree">
+					<!-- Home -->
+					<li>
+						<a href="home.html">
+							<img src="images/sell/home.png" height="25px">
+							<span>Home</span>
+						</a>
+					</li>
+					<!-- Sell -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/sale.jpg" height="25px">
+							<span>Sale</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="sell.html">Sell</a></li>
+							<li><a href="open.close.html">Open / Close</a></li>
+							<li><a href="sale.history.html">Sale History</a></li>
+						</ul>
+					</li>
+					<!-- Reporting -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/reporting.jfif" height="25px">
+							<span>Reporting</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="retail_chart_report.html">Retail Dashboard</a></li>
+							<li><a href="register.closure.html">Register Closure</a></li>
+							<li><a href="sale.report.html">Sale Report</a></li>
+							<li><a href="inventory_report.html">Inventory Report</a></li>
+						</ul>
+					</li>
+					<!-- Product -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/product.png" height="25px">
+							<span>Product</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="product.html">Product</a></li>
+							<li><a href="type.html">Type</a></li>
+							<li><a href="brand.html">Brand</a></li>
+							<li><a href="tags.html">Tags</a></li>
+							<li><a href="supplier.html">Supplier</a></li>
+						</ul>
+					</li>
+					<!-- Customer -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/customer.jfif" height="25px">
+							<span>Customer</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="customer.html">Customer</a></li>
+							<li><a href="group.html">Groups</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<div class="content container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="pagetitle">
+							<h1><a href="customer.html"><i class="fas fa-arrow-alt-circle-left"></i>Update Customer</a></h1>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<form class="upload-form">
+							<div class="form-group row">
+								<label for="customer_name" class="col-md-2  col-form-label">Customer name</label>
+								<div class="col-md-8 col-sm-12">
+									<input type="text" class="form-control" id="customer_name"  placeholder="Enter customer name" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="group" class="col-md-2  col-form-label">Group</label>
+								<div class="col-md-8 col-sm-12">
+									<select id="group"></select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="gender" class="col-md-2  col-form-label">Gender</label>
+								<div class="col-md-8 col-sm-12">
+									<input type="text" class="form-control" id="gender"  placeholder="Enter gender " required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="description" class="col-sm-2 col-form-label">Description</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="description"  placeholder="Enter phone number" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="phone" class="col-sm-2 col-form-label">Phone</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="phone"  placeholder="Enter phone number" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="mobile" class="col-sm-2 col-form-label">Mobile</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="mobile"  placeholder="Enter mobile number" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="email" class="col-sm-2 col-form-label">Email</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="email"  placeholder="Enter email" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="fax" class="col-sm-2 col-form-label">Fax</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="fax"  placeholder="Enter fax" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="bDate" class="col-sm-2 col-form-label">Date of birth</label>
+								<div class="col-sm-8">
+									<input type="date" class="form-control" id="bDate" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="road" class="col-sm-2 col-form-label">Road</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="road"  placeholder="Enter road" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="street" class="col-sm-2 col-form-label">Street</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="street"  placeholder="Enter street" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="suburb" class="col-sm-2 col-form-label">Suburb</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="suburb"  placeholder="Enter suburb" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="city" class="col-sm-2 col-form-label">City</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="city"  placeholder="Enter city" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="post_code" class="col-sm-2 col-form-label">Post code</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="post_code"  placeholder="Enter post code" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="state" class="col-sm-2 col-form-label">State</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="state"  placeholder="Enter state" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="country" class="col-sm-2 col-form-label">Country</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="country"  placeholder="Enter country" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="company" class="col-sm-2 col-form-label">company</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="company"  placeholder="Enter company" required>
+								</div>
+							</div>
+							<div class="text-center">
+								<button class="btn btn-lg btn-primary" type="button" id="updateCustomer">Update</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sale POS</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Javascript Library-->
+	<script type="text/javascript"  src="js/jquery-3.2.0.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+	<!-- Theme style -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+	<!-- Custom javascript and css -->
+	<script type="text/javascript" src="js/sell/open.close.js"></script>
+	<link rel="stylesheet" href="css/sell/open.close.css">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<!-- Main Header -->
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="home.html" class="logo">
+				<span class="pull-left">
+					<img src="images/SalePOS.png" height="30px" style=" height:30px;">
+				</span>
+				<span>
+					<b>Sale</b>(POS)
+				</span>
+			</a>
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr">&#x21CB;</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/admin.png" class="user-image" alt="User Image">
+								<span class="hidden-xs" id="username">Admin</span>
+							</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header">
+									<img src="images/admin.png" class="img-circle" alt="User Image">
+									<p>
+										<label id="dUsername">Admin</label> - <label id="rank">Web Developer</label>
+										<small id="createdDate">Member since Nov. 2015</small>
+									</p>
+								</li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-right">
+										<a href="index.html" class="btn btn-primary btn-flat">Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<!-- Sidebar Menu -->
+				<ul class="sidebar-menu" data-widget="tree">
+					<!-- Home -->
+					<li>
+						<a href="home.html">
+							<img src="images/sell/home.png" height="25px">
+							<span>Home</span>
+						</a>
+					</li>
+					<!-- Sell -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/sale.jpg" height="25px">
+							<span>Sale</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="sell.html">Sell</a></li>
+							<li><a href="open.close.html">Open / Close</a></li>
+							<li><a href="sale.history.html">Sale History</a></li>
+						</ul>
+					</li>
+					<!-- Reporting -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/reporting.jfif" height="25px">
+							<span>Reporting</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="retail_chart_report.html">Retail Dashboard</a></li>
+							<li><a href="register.closure.html">Register Closure</a></li>
+							<li><a href="sale.report.html">Sale Report</a></li>
+							<li><a href="inventory_report.html">Inventory Report</a></li>
+						</ul>
+					</li>
+					<!-- Product -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/product.png" height="25px">
+							<span>Product</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="product.html">Product</a></li>
+							<li><a href="type.html">Type</a></li>
+							<li><a href="brand.html">Brand</a></li>
+							<li><a href="tags.html">Tags</a></li>
+							<li><a href="supplier.html">Supplier</a></li>
+						</ul>
+					</li>
+					<!-- Customer -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/customer.jfif" height="25px">
+							<span>Customer</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="customer.html">Customer</a></li>
+							<li><a href="group.html">Groups</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<div class="container-fluid">
+				<!-- This is body area -->
+				<div class="row body" id="body">
+					<div class="col-md-1">
+					</div>
+					
+					<!-- This is open register -->
+					<div class="col-md-10 content" id="openRegister">
+						<form>
+							<h3 align="center">Register closed</h3>
+							<p>Set an opening float to open the register and make a sale.</p>
+							<label><b>Opening Float</b></label></br>
+							<input type="text" placeholder="$ 0.00" class="form-control" id="opening_balance"></br>
+							<lbael><b>Notes</b> (optional)</label></br>
+							<input type="textarea" placeholder="Enter a note" class="form-control" maxlength="255" id="opening_note"></br>
+							<label>Max characters: 255</label></br>
+							<button type="button" class="form-control" style="background-color:green; color:white" onclick="OpenRegister();">Open Register</button>
+						</form>
+					</div>
+					
+					<!-- This is close register -->
+					<div class="col-md-10 content" id="closeRegister">
+						<form>
+							<h3>Closed Register</h3>
+							<table class="table table-stripped">
+								<thead style="background-color:green; color:white;">
+									<tr>
+										<th>Payments Types</th>
+										<th>Expected($)</th>
+										<th>Counted($)</th>
+										<th>Differences</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Cash</td>
+										<td><label id="expected">0.00</label></td>
+										<td><input type="number" placeholder="Enter a amount" id="counted" onchange="CalculateDifference();"></td>
+										<td><label id="difference">0.00</label></td>
+									</tr>
+									<tr>
+										<td>Cash Payments Received</td>
+										<td id="cash_payment_received">0.00</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Store credit</td>
+										<td><label id="store_credit">0.00</lbel></td>
+										<td>0.00</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td>Total</td>
+										<td><label id="total">0.00</label></td>
+										<td><lbael id="tCounted">0.00</label></td>
+										<td><label id="tDifference">0.00</label></td>
+									</tr>
+									<tr>
+										<td colspan="4"><input type="textarea" class="form-control" placeholder="Type to add a register closure note" id="closing_note"></td>
+									</tr>
+								</tbody>
+							</table>
+							<button type="button" class="form-control" style="background-color:green; color:white" onclick="CloseRegister();">Close Register</button>
+						</form>
+					</div>
+					
+					<div class="col-md-1">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
