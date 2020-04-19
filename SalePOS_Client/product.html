@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sale POS</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Javascript Library-->
+	<script type="text/javascript"  src="js/jquery-3.2.0.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+	<!-- Theme style -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+
+	<!-- Custom javascript and css -->
+	<script type="text/javascript"  src="js/get/product.js"></script>
+	<script type="text/javascript"  src="js/delete/delete_product.js"></script>
+	<script type="text/javascript" src="js/post/post_product.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<!-- Main Header -->
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="" class="logo">
+				<span class="pull-left">
+					<img src="images/SalePOS.png" height="30px" style=" height:30px;">
+				</span>
+				<span>
+					<b>Sale</b>(POS)
+				</span>
+			</a>
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr">&#x21CB;</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/admin.png" class="user-image" alt="User Image">
+								<span class="hidden-xs" id="username">Admin</span>
+							</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header">
+									<img src="images/admin.png" class="img-circle" alt="User Image">
+									<p>
+										<label id="dUsername">Admin</label> - <label id="rank">Web Developer</label>
+										<small id="createdDate">Member since Nov. 2015</small>
+									</p>
+								</li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-right">
+										<a href="index.html" class="btn btn-primary btn-flat">Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<!-- Sidebar Menu -->
+				<ul class="sidebar-menu" data-widget="tree">
+					<!-- Home -->
+					<li>
+						<a href="home.html">
+							<img src="images/sell/home.png" height="25px">
+							<span>Home</span>
+						</a>
+					</li>
+					<!-- Sell -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/sale.jpg" height="25px">
+							<span>Sale</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="sell.html">Sell</a></li>
+							<li><a href="open.close.html">Open / Close</a></li>
+							<li><a href="sale.history.html">Sale History</a></li>
+						</ul>
+					</li>
+					<!-- Reporting -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/reporting.jfif" height="25px">
+							<span>Reporting</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="retail_chart_report.html">Retail Dashboard</a></li>
+							<li><a href="register.closure.html">Register Closure</a></li>
+							<li><a href="sale.report.html">Sale Report</a></li>
+							<li><a href="inventory_report.html">Inventory Report</a></li>
+						</ul>
+					</li>
+					<!-- Product -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/product.png" height="25px">
+							<span>Product</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="product.html">Product</a></li>
+							<li><a href="type.html">Type</a></li>
+							<li><a href="brand.html">Brand</a></li>
+							<li><a href="tags.html">Tags</a></li>
+							<li><a href="supplier.html">Supplier</a></li>
+						</ul>
+					</li>
+					<!-- Customer -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/customer.jfif" height="25px">
+							<span>Customer</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="customer.html">Customer</a></li>
+							<li><a href="group.html">Groups</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<section class="content">
+				<div>
+					<div class="pagetitle">
+						<h1>Product</h1>
+					</div>
+				</div>
+				<div class="addpanel">
+					<div class="row">
+						<div class="col-md-8">
+							<p class="note">Add,view and edit your products all in one place.</p>
+						</div>
+						<div class=" col-md-4">
+							<a href="post_product.html" class=" addbutton btn btn-success">Add Product</a>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="item-table">
+								<table id="product_table" class="table table-hover text-center">
+									<thead class="thead-dark">
+										<tr>
+											<th>Product</th>
+											<th>Quantity</th> 
+											<th>Price</th>
+											<th>Date</th>
+											<th></th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody id="product">
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+</html>

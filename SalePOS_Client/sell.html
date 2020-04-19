@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sale POS</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Javascript Library-->
+	<script type="text/javascript"  src="js/jquery-3.2.0.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+	<!-- Theme style -->
+	<script src="dist/js/adminlte.min.js"></script>
+	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+	<!-- Custom javascript and css -->
+	<script type="text/javascript" src="js/sell/sell.js"></script>
+	<link rel="stylesheet" href="css/sell/sell.css">
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+		<!-- Main Header -->
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="" class="logo">
+				<span class="pull-left">
+					<img src="images/SalePOS.png" height="30px" style=" height:30px;">
+				</span>
+				<span>
+					<b>Sale</b>(POS)
+				</span>
+			</a>
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr">&#x21CB;</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/admin.png" class="user-image" alt="User Image">
+								<span class="hidden-xs" id="username">Admin</span>
+							</a>
+							<ul class="dropdown-menu">
+								<!-- User image -->
+								<li class="user-header">
+									<img src="images/admin.png" class="img-circle" alt="User Image">
+									<p>
+										<label id="dUsername">Admin</label> - <label id="rank">Web Developer</label>
+										<small id="createdDate">Member since Nov. 2015</small>
+									</p>
+								</li>
+								<!-- Menu Footer-->
+								<li class="user-footer">
+									<div class="pull-right">
+										<a href="index.html" class="btn btn-primary btn-flat">Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<!-- Sidebar Menu -->
+				<ul class="sidebar-menu" data-widget="tree">
+					<!-- Home -->
+					<li>
+						<a href="home.html">
+							<img src="images/sell/home.png" height="25px">
+							<span>Home</span>
+						</a>
+					</li>
+					<!-- Sell -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/sale.jpg" height="25px">
+							<span>Sale</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="sell.html">Sell</a></li>
+							<li><a href="open.close.html">Open / Close</a></li>
+							<li><a href="sale.history.html">Sale History</a></li>
+						</ul>
+					</li>
+					<!-- Reporting -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/reporting.jfif" height="25px">
+							<span>Reporting</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="retail_chart_report.html">Retail Dashboard</a></li>
+							<li><a href="register.closure.html">Register Closure</a></li>
+							<li><a href="sale.report.html">Sale Report</a></li>
+							<li><a href="inventory_report.html">Inventory Report</a></li>
+						</ul>
+					</li>
+					<!-- Product -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/product.png" height="25px">
+							<span>Product</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="product.html">Product</a></li>
+							<li><a href="type.html">Type</a></li>
+							<li><a href="brand.html">Brand</a></li>
+							<li><a href="tags.html">Tags</a></li>
+							<li><a href="supplier.html">Supplier</a></li>
+						</ul>
+					</li>
+					<!-- Customer -->
+					<li class="treeview">
+						<a href="#">
+							<img src="images/sell/customer.jfif" height="25px">
+							<span>Customer</span>
+							<span class="pull-right-container">&#x21F2;</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="customer.html">Customer</a></li>
+							<li><a href="group.html">Groups</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<div class="container-fluid">
+				<!-- This is body area -->
+				<div class="row body" id="body">
+					<!-- This is Home  -->
+					<div class="col-md-12 content" id="home">
+						<div class="row" id="saleFirstPage">
+							<!-- This is product information table -->
+							<div class="col-md-6 leftSide" id="productTable">
+								<h1>Product Information</h1>
+								<table class="table table-stripped">
+									<thead style="background-color:green; color:white;">
+										<tr>
+											<th>Product ID</th>
+											<th>Product Name</th>
+											<th>Price</th>
+											<th>Add Item</th>
+										</tr>
+									</thead>
+									<tbody id="productTableBody">
+										<thread>
+											<!-- Here will be show product information -->
+										</thread>
+									</tbody>
+								</table>
+							</div>
+							
+							<!-- This is open register -->
+							<div class="col-md-6 rightSide" id="openRegister">
+								<form>
+									<h3 align="center">Register closed</h3>
+									<p>Set an opening float to open the register and make a sale.</p>
+									<label><b>Opening Float</b></label></br>
+									<input type="text" placeholder="$ 0.00" class="form-control" id="openingFloat"></br>
+									<lbael><b>Notes</b> (optional)</label></br>
+									<input type="textarea" placeholder="Enter a note" class="form-control" maxlength="255" id="openingNote"></br>
+									<label>Max characters: 255</label></br>
+									<button type="button" class="form-control" style="background-color:green; color:white" onclick="OpenRegister();">Open Register</button>
+								</form>
+							</div>
+							
+							<!-- This is sell product -->
+							<div class="col-md-6 rightSide" id="saleProduct">
+								<form>
+									<h3 align="center">Making Sale!</h3>
+									<select id="selCustomerName" class="form-control"></select></br>
+									<div class="saleProduct">
+										<table class="table table-stripped" id="saleProductTable">
+											<thead>
+												<th>ID</th>
+												<th>ProductName</th>
+												<th>Quantity</th>
+												<th>Subtotal</th>
+												<th>Delete</th>
+												<th>EditQuantity</th>
+											</thead>
+											<tbody id="saleProductTableBody">
+												<thread>
+													<!-- Here will be show sale product -->
+												</thread>
+											</tbody>
+										</table>
+									</div>
+									<div>
+										<table class="table">
+											<tr>
+												<td><label>Subtotal</label></td>
+												<td><input type="number" value="0.00" class="form-control" id="subtotal" onchange="CalculatePay();" readonly></td>
+											</tr>
+											<tr>
+												<td><label>Tax </label></td>
+												<td><input type="number" value="0.00" class="form-control" id="txtTax" onchange="CalculatePay();"></td>
+											</tr>
+											<tr>
+												<td><label>Discount (%) </label></td>
+												<td><input type="number" value="0.00" class="form-control" id="txtDiscount" onchange="CalculatePay();"></td>
+											</tr>
+											<tr>
+												<td><label>Pay <label id="items">0</label> Items</label></td>
+												<td><button type="button" class="form-control" style="background-color:green; color:white;" id="btnTotal" onclick="Pay();">0.00</button></td>
+											</tr>
+										</table>
+									</div>
+								</form>
+							</div>
+						</div>
+						
+						<div class="row" id="saleSecondPage">
+							<!-- This is sale summary -->
+							<div class="col-md-6 leftSide" id="saleSummary">
+								<h3><u>Sale Summary</u></h3>
+								<div style="max-height:350px; overflow:scroll; background-color:white;">
+									<table class="table table-stripped" id="saleSummaryProductTable">
+										<thead style="background-color:green; color:white;">
+											<tr>
+												<th>ID</th>
+												<th>ProductName</th>
+												<th>Quantity</th>
+												<th>Subtotal</th>
+											</tr>
+										</thead>
+										<tbody id="saleSummaryProductTableBody">
+											<thread>
+												<!-- Here will be show sale summary -->
+											</thread>
+										</tbody>
+									</table>
+								</div>
+								<div>
+									<table class="table table-stripped" id="saleSummaryTable">
+										<tr>
+											<th>Subtotal</th>
+											<td id="smSubtotal"></td>
+										</tr>
+										<tr>
+											<th>Tax</th>
+											<td id="smTax"></td>
+										</tr>
+										<tr>
+											<th>Discount</th>
+											<td id="smDiscount"></td>
+										</tr>
+										<tr>
+											<th><label><b>TOTAL</b></label>&nbsp;<label id="smItems">&nbsp;0&nbsp;</label> items</th>
+											<td id="smTotal"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<!-- This is pay  -->
+							<div class="col-md-6 rightSide" id="pay">
+								<form>
+									<table class="table table-stripped">
+										<tr>
+											<th></th>
+											<th style="text-align:right; cursor:pointer;"><h5 onclick="SaleProduct();"><b>&lArr; Back to Sale</b></h5></th>
+										</tr>
+										<tr>
+											<th><h6>Amount Paid</h6></th>
+											<td><input type="text" class="form-control" placeholder="0.00" style="text-align:center;" id="txtAmountPaid" readonly></td>
+										</tr>
+										<tr>
+											<th><h6>Paid</h6></th>
+											<td><input type="number" class="form-control" value="0.00" style="text-align:center;" id="txtPaid" autofocus></td>
+										</tr>
+										<tr>
+											<td><button type="button" class="form-control btn btn-success" style="background-color:green; color:white" onclick="Cash();">Cash</button></td>
+											<td></td>
+										</tr>
+									</table>
+								</form>
+							</div>
+							<!-- This is done ESC -->
+							<div class="col-md-6 rightSide" id="done">
+								<form>
+									<table class="table table-stripped">
+										<tr>
+											<th style="text-align:center;"><h1><b>Give $ <label id="lblRepay">0.00</label> Change</b></h1></th>
+										</tr>
+										<tr>
+											<td><button type="button" class="form-control btn btn-success" style="background-color:green; color:white" onclick="Done();">Done(ESC)</button></td>
+										</tr>
+									</table>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
